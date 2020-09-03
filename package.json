@@ -1,0 +1,24 @@
+{
+  "name": "web-project-arithmetic",
+  "version": "1.0.0",
+  "description": "总结自己web项目中用到的算法。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/insistenceZHUO/web-project-arithmetic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/insistenceZHUO/web-project-arithmetic/issues"
+  },
+  "homepage": "https://github.com/insistenceZHUO/web-project-arithmetic#readme",
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
