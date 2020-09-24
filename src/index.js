@@ -6,30 +6,32 @@
     @params value: 子id
 */
 
-function getPath(array, value) {
-  const arr = [];
-  array &&
-    array.forEach((items, i) => {
-      if (items.id === value) {
-        arr.push(items);
-        // return false
-      }
-      if (typeof items.children !== 'undefined') {
-        items.children.forEach((item, j) => {
-          if (item.id === value) {
-            arr.push(items, item);
-            // return false
-          }
-          if (typeof item.children !== 'undefined') {
-            item.children.forEach((val, k) => {
-              if (val.id === value) {
-                arr.push(items, item, val);
-                // return false
-              }
-            });
-          }
-        });
-      }
-    });
-  return arr;
+export function getParentNode(tree, func, path = []) {
+  // debugger;
+  if (!tree) return [];
+  for (const data of tree) {
+    // 这里按照你的需求来存放最后返回的内容吧
+    path.push(data);
+    if (func(data)) return path;
+    if (data.children) {
+      const findChildren = getParentNode(data.children, func, path);
+      if (findChildren.length) return findChildren;
+    }
+    path.pop();
+  }
+  return [];
+}
+
+// 获取treeNode指定节点的数据
+export function assignNode(list = [], target) {
+  let q = [...list];
+  let res;
+  while (q.length) {
+    let item = q.shift();
+    if (item.code === target) {
+      return item;
+    }
+    item.children && item.children.length && q.push(...item.children);
+  }
+  return res;
 }

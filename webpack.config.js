@@ -2,10 +2,10 @@ const { resolve } = require('path');
 
 module.exports = {
   entry: {
-    index: './src/index.js',
+    index: './src/demo.js',
   },
+
   output: {
     path: resolve(__dirname, 'dist'),
-    filename: '[name][hash:2]',
   },
 };
