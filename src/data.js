@@ -93,3 +93,9 @@ export const treeData = [
     ],
   },
 ];
+
+export const names = ['iPhone X', 'iPhone XS'];
+
+export const colors = ['黑色', '白色'];
+
+export const storages = ['64g', '256g'];
